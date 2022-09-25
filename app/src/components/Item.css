@@ -1,0 +1,10 @@
+.item{
+    min-height: 75px;
+    margin-bottom: 10px;
+}
+.item-unread{
+    background-color: var(--very-light-grayish-blue);
+}
+.item-read{
+    background-color: white;
+}

@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.content{
+    height: 85%;
+    width: 85%;
+    max-width: 720px;
+    background-color: tomato;
+    padding: 20px;
+
+}
