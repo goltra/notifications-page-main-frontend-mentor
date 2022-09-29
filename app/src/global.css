@@ -13,4 +13,17 @@
   font-size: 16px;
 }
 
+.activate {
+  font-weight: bolder;
+}
+
+.action {
+  color: var(--dark-grayish-blue);
+}
+
+.activate:hover {
+  cursor: pointer;
+  color: var(--blue);
+}
+
 
