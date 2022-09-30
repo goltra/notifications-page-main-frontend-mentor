@@ -3,7 +3,7 @@ import './Item.css';
 import PrivateMessage from './PrivateMessage';
 
 
-const Item = ({ item }) => {
+const Item = ({ item, toogle }) => {
     const pointUnread = () => {
         if (item.unread) {
             return <img className='unreadPoint' src={require('../images/punto.png')}></img>
@@ -11,7 +11,7 @@ const Item = ({ item }) => {
     }
     const privateMessage = () => {
         if (item.isPrivate) {
-            return <PrivateMessage></PrivateMessage>;
+            return <PrivateMessage text={item.privateMessage}></PrivateMessage>;
         }
     }
     return (
@@ -24,7 +24,7 @@ const Item = ({ item }) => {
                             <span className="activate">{item.user}</span>
                             <span className='action'>{" " + item.action + " "} </span>
                             <span className="activate">{item.actionTo}</span></p>
-                        <span className="activate">{pointUnread()}</span>
+                        <span onClick={()=>toogle(item)} className="activate">{pointUnread()}</span>
                     </div>
                     <p className='time'>5m ago</p>
                 </div>

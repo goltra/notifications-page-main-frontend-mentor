@@ -1,8 +1,9 @@
 import '../global.css';
+import './PrivateMessage.css';
 
-const PrivateMessage = ()=>{
+const PrivateMessage = ({text}) => {
     return (
-        <p>Mensaje privado</p>
+        <p className='private-message'> {text} </p>
     )
 }
 

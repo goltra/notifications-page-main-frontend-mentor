@@ -1,0 +1,7 @@
+.private-message{
+    border: solid 1px var(--light-grayish-blue2);
+    margin-left: 78px;
+    margin-right: 20px;
+    padding: 20px;
+    color: var(--dark-grayish-blue);
+}
