@@ -2,53 +2,78 @@
   {
     "id": 1,
     "unread": true,
-    "image": "avatar-angela-gray.webp",
+    "image": "avatar-mark-webber.webp",
     "user": "Mark Webber",
     "action": "reacted to your recent post",
     "actionTo": "My post peter pan can fly",
-    "isPrivate": true,
-    "privateMessage": "Hello thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game. "
+    "isPrivate": false,
+    "privateMessage": null,
+    "time": "1m ago"
   },
   {
     "id": 2,
     "unread": true,
     "image": "avatar-angela-gray.webp",
-    "user": "Mark Webber",
-    "action": "reacted to your recent post",
-    "actionTo": "My post peter pan can fly",
-    "isPrivate": true,
-    "privateMessage": "Hello thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game. "
+    "user": "Angela Gray",
+    "action": "followed you",
+    "actionTo": "",
+    "isPrivate": false,
+    "privateMessage": "",
+    "time": "5m ago"
   },
   {
     "id": 3,
     "unread": true,
-    "image": "avatar-angela-gray.webp",
-    "user": "Mark Webber",
-    "action": "reacted to your recent post",
-    "actionTo": "My post peter pan can fly",
-    "isPrivate": true,
-    "privateMessage": "Hello thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game. "
+    "image": "avatar-jacob-thompson.webp",
+    "user": "Jacob Thompson",
+    "action": "has joined your group",
+    "actionTo": "Chess Club",
+    "isPrivate": false,
+    "privateMessage": null,
+    "time": "5 day ago"
   },
   {
     "id": 4,
-    "unread": true,
-    "image": "avatar-angela-gray.webp",
-    "user": "Mark Webber",
-    "action": "reacted to your recent post",
-    "actionTo": "My post peter pan can fly",
+    "unread": false,
+    "image": "avatar-rizky-hasanuddin.webp",
+    "user": "Rizky Hasanuddin",
+    "action": "sent you a private message",
+    "actionTo": "",
     "isPrivate": true,
-    "privateMessage": "Hello thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game. "
+    "privateMessage": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+    "time": "5 days ago"
   },
   {
     "id": 5,
-    "unread": true,
-    "image": "avatar-angela-gray.webp",
-    "user": "Mark Webber",
+    "unread": false,
+    "image": "avatar-kimberly-smith.webp",
+    "user": "Kimberly Smith",
+    "action": "commented on your picture",
+    "actionTo": "",
+    "isPrivate": false,
+    "privateMessage": null,
+    "time": "1 week ago"
+  },
+  {
+    "id": 6,
+    "unread": false,
+    "image": "avatar-nathan-peterson.webp",
+    "user": "Nathan Peterson",
     "action": "reacted to your recent post",
-    "actionTo": "My post peter pan can fly",
-    "isPrivate": true,
-    "privateMessage": "Hello thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game. "
+    "actionTo": "5 end-game strategies to increase your win rate",
+    "isPrivate": false,
+    "privateMessage": null,
+    "time": "2 weeks ago"
+  },
+  {
+    "id": 7,
+    "unread": false,
+    "image": "avatar-anna-kim.webp",
+    "user": "Anna Kim",
+    "action": "left the group",
+    "actionTo": "Chess Club",
+    "isPrivate": false,
+    "privateMessage": null,
+    "time": "2 weeks ago"
   }
 ]
-
-
