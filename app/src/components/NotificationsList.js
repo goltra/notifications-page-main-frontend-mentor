@@ -3,24 +3,55 @@ import './NotificationsList.css'
 import Notifications from './Notifications';
 import Item from './Item';
 import data from '../data/messages.json';
+import { useEffect, useState } from 'react';
 
 
 const NotificationsList = () => {
-    const toogle = (item)=>{
-        console.log('item',item);
-        /*item.unread = !item.unread;*/
+
+    const [messages, setMessages] = useState(data);
+    const [unreads, setUnreads] = useState(0);
+
+
+
+    const markAllRead = () => {
+        setMessages((msgs) => {
+            msgs.map(m => m.unread = false);
+            return msgs;
+        })
+        countUnread();
+        console.log('mark', messages);
+    }
+
+    const countUnread = () => {
+        const withUnread = messages.filter(m => m.unread === true);
+        console.log('withUnread', withUnread);
+        setUnreads(withUnread.length);
+    }
+
+    useEffect(() => {
+        countUnread();
+        console.log('useEffect NotificationList', messages)
+    }, []);
+
+    const toggleRead = (item) => {
+        console.log('toggleRead item', item)
+        setMessages((msgs)=>{
+            msgs.find(m => item.id === m.id).unread = !item.unread;
+            return msgs
+        });
+        countUnread();
     };
-console.log(data);
+
     return (
         <div className='container'>
-            <div class='content'>
+            <div className='content'>
                 <div className="notification-display">
-                    <Notifications unreadItems="3"/>
-                    <span className="activate mark-all ">Mark all as read</span>
+                    <Notifications unreadItems={unreads} />
+                    <span className="activate mark-all " onClick={markAllRead}>Mark all as read</span>
                 </div>
                 <div>
                     {
-                        data.map((d)=> <Item key={d.id} item={d} toogle-read={(e)=>toogle(e)}></Item> )
+                        messages.map((d) => <Item key={d.id} item={d} unread={d.unread} toggleRead={toggleRead}></Item>)
                     }
                 </div>
             </div>

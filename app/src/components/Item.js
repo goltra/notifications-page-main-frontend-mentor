@@ -1,12 +1,13 @@
+import { useEffect, useState } from 'react';
 import '../global.css';
 import './Item.css';
 import PrivateMessage from './PrivateMessage';
 
 
-const Item = ({ item, toogle }) => {
+const Item = ({ item, unread,toggleRead }) => {
     const pointUnread = () => {
-        if (item.unread) {
-            return <img className='unreadPoint' src={require('../images/punto.png')}></img>
+        if (unread) {
+            return <img onClick={()=>toggleRead(item)} className='unreadPoint' src={require('../images/punto.png')}></img>
         }
     }
     const privateMessage = () => {
@@ -14,19 +15,28 @@ const Item = ({ item, toogle }) => {
             return <PrivateMessage text={item.privateMessage}></PrivateMessage>;
         }
     }
+
+    useEffect(() => {
+        console.log('useEffect Item', item.unread);
+    })
+
+
+
+
     return (
         <section>
-            <div className={`item ${item.unread ? 'item-unread' : 'item-read'}`}>
+            <div key={item.key} className={`item ${item.unread ? 'item-unread' : 'item-read'}`}>
                 <img className='avatar' src={require('../images/' + item.image)}></img>
                 <div>
                     <div className='message-container'>
+                        -- {JSON.stringify(unread)}
                         <p className='message'>
                             <span className="activate">{item.user}</span>
                             <span className='action'>{" " + item.action + " "} </span>
                             <span className="activate">{item.actionTo}</span></p>
-                        <span onClick={()=>toogle(item)} className="activate">{pointUnread()}</span>
+                        <span className="activate">{pointUnread()}</span>
                     </div>
-                    <p className='time'>5m ago</p>
+                    <p className='time'>{item.time}</p>
                 </div>
             </div>
             <div>
