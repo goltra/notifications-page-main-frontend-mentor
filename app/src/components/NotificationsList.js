@@ -14,12 +14,10 @@ const NotificationsList = () => {
 
 
     const markAllRead = () => {
-        setMessages((msgs) => {
-            msgs.map(m => m.unread = false);
-            return msgs;
-        })
+        const msgs = [...messages];
+        msgs.map(m => m.unread = false);
+        setMessages(msgs);
         countUnread();
-        console.log('mark', messages);
     }
 
     const countUnread = () => {
@@ -35,10 +33,10 @@ const NotificationsList = () => {
 
     const toggleRead = (item) => {
         console.log('toggleRead item', item)
-        setMessages((msgs)=>{
-            msgs.find(m => item.id === m.id).unread = !item.unread;
-            return msgs
-        });
+        const newData = [...messages];
+        const index = messages.findIndex(i => i.id === item.id)
+        newData[index].unread= !item.unread;
+        setMessages(newData);
         countUnread();
     };
 
@@ -51,7 +49,7 @@ const NotificationsList = () => {
                 </div>
                 <div>
                     {
-                        messages.map((d) => <Item key={d.id} item={d} unread={d.unread} toggleRead={toggleRead}></Item>)
+                        messages.map((d) => <Item key={d.id} item={d} unread={d.unread} toggleRead={toggleRead} />)
                     }
                 </div>
             </div>

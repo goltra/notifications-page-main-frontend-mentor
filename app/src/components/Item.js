@@ -29,7 +29,6 @@ const Item = ({ item, unread,toggleRead }) => {
                 <img className='avatar' src={require('../images/' + item.image)}></img>
                 <div>
                     <div className='message-container'>
-                        -- {JSON.stringify(unread)}
                         <p className='message'>
                             <span className="activate">{item.user}</span>
                             <span className='action'>{" " + item.action + " "} </span>
