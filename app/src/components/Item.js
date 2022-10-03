@@ -4,41 +4,39 @@ import './Item.css';
 import PrivateMessage from './PrivateMessage';
 
 
-const Item = ({ item,unread }) => {
+const Item = ({ item, unread,toggleRead }) => {
     const pointUnread = () => {
-        if (i.unread) {
-            return <img onClick={setRead} className='unreadPoint' src={require('../images/punto.png')}></img>
+        if (unread) {
+            return <img onClick={()=>toggleRead(item)} className='unreadPoint' src={require('../images/punto.png')}></img>
         }
     }
     const privateMessage = () => {
-        if (i.isPrivate) {
-            return <PrivateMessage text={i.privateMessage}></PrivateMessage>;
+        if (item.isPrivate) {
+            return <PrivateMessage text={item.privateMessage}></PrivateMessage>;
         }
     }
 
     useEffect(() => {
-        console.log('useEffect Item', i.unread);
+        console.log('useEffect Item', item.unread);
     })
-    const [i, setItem] = useState(item);
 
-    const setRead = () => { 
-        setItem({...i, unread : false});
-     };
+
+
 
     return (
         <section>
-            <div key={i.key} className={`item ${i.unread ? 'item-unread' : 'item-read'}`}>
-                <img className='avatar' src={require('../images/' + i.image)}></img>
+            <div key={item.key} className={`item ${item.unread ? 'item-unread' : 'item-read'}`}>
+                <img className='avatar' src={require('../images/' + item.image)}></img>
                 <div>
                     <div className='message-container'>
                         -- {JSON.stringify(unread)}
                         <p className='message'>
-                            <span className="activate">{i.user}</span>
-                            <span className='action'>{" " + i.action + " "} </span>
-                            <span className="activate">{i.actionTo}</span></p>
+                            <span className="activate">{item.user}</span>
+                            <span className='action'>{" " + item.action + " "} </span>
+                            <span className="activate">{item.actionTo}</span></p>
                         <span className="activate">{pointUnread()}</span>
                     </div>
-                    <p className='time'>{i.time}</p>
+                    <p className='time'>{item.time}</p>
                 </div>
             </div>
             <div>
