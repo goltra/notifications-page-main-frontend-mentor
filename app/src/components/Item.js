@@ -4,15 +4,21 @@ import './Item.css';
 import PrivateMessage from './PrivateMessage';
 
 
-const Item = ({ item, unread,toggleRead }) => {
+const Item = ({ item, unread, toggleRead }) => {
     const pointUnread = () => {
         if (unread) {
-            return <img onClick={()=>toggleRead(item)} className='unreadPoint' src={require('../images/punto.png')}></img>
+            return <img onClick={() => toggleRead(item)} className='unreadPoint' src={require('../images/punto.png')}></img>
         }
     }
     const privateMessage = () => {
         if (item.isPrivate) {
             return <PrivateMessage text={item.privateMessage}></PrivateMessage>;
+        }
+    }
+
+    const reactPicture = () => {
+        if (item.reactPicture.length > 0) {
+            return <img className='reactPicture' src={require('../images/' + item.reactPicture)}  />
         }
     }
 
@@ -27,7 +33,7 @@ const Item = ({ item, unread,toggleRead }) => {
         <section>
             <div key={item.key} className={`item ${item.unread ? 'item-unread' : 'item-read'}`}>
                 <img className='avatar' src={require('../images/' + item.image)}></img>
-                <div>
+                <div style={{width: '100%'}}>
                     <div className='message-container'>
                         <p className='message'>
                             <span className="activate">{item.user}</span>
@@ -37,6 +43,7 @@ const Item = ({ item, unread,toggleRead }) => {
                     </div>
                     <p className='time'>{item.time}</p>
                 </div>
+                {reactPicture()}
             </div>
             <div>
                 {privateMessage()}
